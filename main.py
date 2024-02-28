@@ -9,7 +9,7 @@ import matplotlib.pyplot as plt
 import time
 
 
-
+# a note to trigger git
 def marketplace_search(name):
     # browser = Browser(driver_name='firefox', executable_path=ChromeDriverManager().install())
 
