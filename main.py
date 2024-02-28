@@ -14,8 +14,10 @@ def marketplace_search(name):
     # browser = Browser(driver_name='firefox', executable_path=ChromeDriverManager().install())
 
     try:
+        # browser = Browser(driver_name='firefox', executable_path=ChromeDriverManager().install())
         browser = Browser('firefox', executable_path=GeckoDriverManager().install())
     except:
+        #browser = Browser('chrome')
         browser = Browser('firefox')
 
     base_url = 'https://www.facebook.com/marketplace/tampa/search?'
@@ -33,7 +35,7 @@ def marketplace_search(name):
     }
     parameters_list = []
     for (k, v) in parameters.items():
-        parameters_list.append( f'{k}={v}')
+        parameters_list.append(f'{k}={v}')
     search_parameters = '&'.join(parameters_list)
     full_url = base_url + search_parameters
     print(full_url)
