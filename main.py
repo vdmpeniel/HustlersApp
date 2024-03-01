@@ -18,6 +18,7 @@ import time
 import scrapping_splinter
 import scrapping_selenium
 
+
 def marketplace_selector(term):
     variables = {
         "params": {
@@ -113,12 +114,6 @@ def marketplace_selector(term):
     return location_list
 
 
-
-
-
-
-
-
 if __name__ == '__main__':
     location_id = marketplace_selector('33461')[0]['id']
     # scrapping_splinter.marketplace_search('trailer', location_id)
@@ -127,12 +122,17 @@ if __name__ == '__main__':
     payload = {
         'location_id': location_id,
         'parameters': {
-            'minPrice': 1000,
-            'maxPrice': 3000,
+            'minPrice': 100,
+            'maxPrice': 2000,
             'daysSinceListed': 1,
             'sortBy': 'creation_time_descend',
             'query': search_term
         }
     }
-
-    scrapping_selenium.marketplace_search(payload)
+    scrapper = scrapping_selenium.Scrapper({
+        'is_headless': True,
+        'start_maximized': True,
+        'get_details': False,
+        'check_scammers': True
+    })
+    scrapper.marketplace_search(payload)
