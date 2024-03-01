@@ -1,1 +1,3 @@
 cookies.pkl
+*.db
+*/__pycache__/*

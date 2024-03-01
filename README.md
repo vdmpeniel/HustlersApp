@@ -7,3 +7,6 @@ persist dependencies: pip freeze > requirements.txt
 install all dependencies: pip install -r requirements.txt
 install dependency manually: pip install <name>
 upgrade dependency: python3.9 -m pip install --upgrade <name>
+
+CURL to access rest services:
+curl -X POST -H "Content-Type: application/json" -d '{"name":"John"}' http://127.0.0.1:5000/api/search
